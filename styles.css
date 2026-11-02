@@ -823,5 +823,63 @@ main>.testimonials-section{height:auto!important;min-height:clamp(410px,36vw,480
 @media(max-width:1000px){.toolkit-circuit{width:15%;opacity:.56}.toolkit-circuit-trace{stroke-width:1.1}.toolkit-circuit-branch{opacity:.22}}
 @media(max-width:700px){.toolkit-circuit{display:none}}
 
+/* Keep the portfolio panels centered on a shared responsive page column. */
+main{
+  width:min(100% - clamp(32px,4vw,80px),1840px);
+  max-width:none;
+  margin-inline:auto;
+}
+
+/* Remove the desktop-only offsets that pushed About and Contact off center. */
+@media(min-width:701px){
+  .about-content{transform:none}
+  .calendly-panel{transform:none}
+}
+
+@media(max-width:1000px){
+  main{width:calc(100% - 48px)}
+}
+
+@media(max-width:700px){
+  main{width:calc(100% - 28px)}
+}
+
+html,body{overflow-x:clip}
+
+/* Keep the two-column About composition through common laptop widths. */
+@media(min-width:1101px) and (max-width:1400px){
+  .about-layout{
+    display:flex;
+    justify-content:flex-end;
+    align-items:center;
+    height:auto;
+    min-height:0;
+    padding-top:0;
+  }
+  .about-portrait{
+    inset:0 auto 0 0;
+    width:52%;
+    height:auto;
+  }
+  .about-model{
+    left:0;
+    height:min(96%,760px);
+    max-height:760px;
+  }
+  .about-content{
+    width:min(900px,70%);
+    max-width:900px;
+    margin-inline:0;
+    padding:clamp(8px,1.4vw,18px) 0 clamp(16px,2vw,26px);
+    transform:none;
+  }
+}
+
+/* Scale the hero headline down before it crowds the image at laptop widths. */
+@media(min-width:1001px) and (max-width:1400px){
+  .hero-copy{width:60%;max-width:760px}
+  .hero h1{font-size:clamp(65px,7.2vw,104px)}
+}
+
 
 
