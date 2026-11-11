@@ -489,13 +489,7 @@ main>.projects-section{height:auto!important;min-height:var(--section-viewport-h
 .project-placeholder-dialog{width:min(440px,calc(100% - 32px));padding:30px;border:1px solid transparent;border-radius:22px;background:linear-gradient(white,white) padding-box,linear-gradient(120deg,#16baff,#6860fa,#d127da) border-box;color:#17203c;box-shadow:0 24px 70px rgba(8,20,58,.28)}.project-placeholder-dialog::backdrop{background:rgba(5,12,35,.42);backdrop-filter:blur(5px)}.project-placeholder-dialog h3{margin:0 0 10px;font-size:22px;letter-spacing:-.04em}.project-placeholder-dialog>p:last-child{margin:0;color:#66718a;font-size:14px;line-height:1.5}.project-dialog-close{position:absolute;right:13px;top:10px;width:32px;height:32px;border:0;border-radius:50%;background:#eff3ff;color:#394569;font-size:23px;cursor:pointer}
 @media(min-width:701px) and (max-width:1100px){.projects-inner{width:calc(100% - 36px);max-width:1180px}.projects-header{min-height:0}.projects-intro h2{font-size:clamp(14px,1.6vw,17px)}.project-showcases{grid-template-columns:1fr}.project-featured{grid-template-columns:minmax(0,1.18fr) minmax(0,.82fr)}}
 @media(max-width:700px){main>.projects-section{padding:38px 0}.projects-inner{width:calc(100% - 36px)}.projects-header{min-height:0;margin-bottom:24px;padding:0}.projects-intro{max-width:100%}.projects-intro h2{font-size:14px}.projects-lede{max-width:420px;font-size:14px}.project-showcases{grid-template-columns:1fr;gap:14px}.project-showcase{padding:14px;border-radius:19px}.project-featured{grid-template-columns:1fr;gap:14px}.project-preview{aspect-ratio:1.55}.project-placeholder-mark{width:86px;height:86px}.project-mini-grid{grid-template-columns:1fr;gap:9px}.project-mini-card{display:grid;grid-template-columns:110px minmax(0,1fr);align-items:center}.project-mini-preview{min-height:72px;height:100%}.project-mini-card h5{font-size:12px;padding:10px;min-height:0}}
-<<<<<<< HEAD
 @media(prefers-reduced-motion:reduce){.project-category,.projects-contact-link,.projects-contact-link span,.project-view-button,.project-mini-card,.project-showcases{transition:none!important;translate:none!important}}
-
-=======
-@media(prefers-reduced-motion:reduce){.project-category,.projects-contact-link,.projects-contact-link span,.project-view-button,.project-mini-card,.project-showcases{transition:none!important;translate:none!important}}
-
->>>>>>> origin/main
 
 .scroll-cue svg{display:block;width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 
@@ -887,8 +881,3 @@ html,body{overflow-x:clip}
 }
 
 
-<<<<<<< HEAD
-
-=======
-
->>>>>>> origin/main
