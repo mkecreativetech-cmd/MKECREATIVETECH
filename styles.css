@@ -238,7 +238,7 @@ main>.toolkit-section,main>.contact-section{box-shadow:0 0 0 1px rgba(117,99,255
 /* Let the templates reflow when zoom or a compact viewport reduces available space. */
 @media(min-width:701px) and (max-width:1400px){
   main>section:not(.services-certificates-section){height:auto;min-height:var(--section-viewport-height)}
-  main>.hero{height:auto;min-height:max(100svh,46rem)}
+  main>.hero{height:auto;min-height:100svh}
   .hero-inner{height:auto;min-height:inherit}
   .hero-copy{width:66%}
   main>.about-section{height:auto;min-height:var(--section-viewport-height)}
