@@ -1080,4 +1080,31 @@ html,body{overflow-x:clip}
   }
 }
 
+/* Keep mobile scrolling light while preserving the layered backgrounds. */
+@media(max-width:700px){
+  body::before,body::after{animation:none;will-change:auto}
+  body::after{translate:0 0}
+  .toolkit-inner{-webkit-backdrop-filter:none;backdrop-filter:none}
+  .toolkit-inner::before{animation:none;background-position:0 0,50% 0}
+  main>.projects-section::before,main>.projects-section::after{animation:none}
+  .about-card::after{animation:none;will-change:auto}
+  .testimonial-panel{-webkit-backdrop-filter:none;backdrop-filter:none}
+  .testimonial-orb{animation:none;filter:blur(24px)}
+}
+
+/* Touch screens use press feedback in place of mouse hover effects. */
+@media(hover:none) and (max-width:700px){
+  .hero-signature:active{
+    animation:none;
+    opacity:var(--signature-opacity);
+    transform:translateY(calc(-50% - clamp(0px,1.15vw,20px))) scale(1.06);
+    filter:brightness(0) saturate(100%) invert(89%) sepia(15%) saturate(1850%) hue-rotate(164deg) brightness(103%) contrast(102%) drop-shadow(0 0 10px rgba(99,224,255,.8)) drop-shadow(0 0 24px rgba(29,151,255,.55));
+  }
+  .tool-image:active{transform:translateY(-8px) scale(1.08);filter:drop-shadow(0 0 13px rgba(40,201,255,.8)) drop-shadow(0 0 26px rgba(163,57,255,.75))}
+  .service-card:active{translate:0 -2px;box-shadow:0 10px 24px rgba(16,26,43,.18)}
+  .project-folder:active .folder-object{transform:translateY(-6px) scale(1.01)}
+  .project-gallery-slot--filled[data-project-id]:active .project-gallery-image{transform:scale(1.04);opacity:.9}
+  .button:active,.nav-cta:active{transform:translateY(-1px)}
+}
+
 
