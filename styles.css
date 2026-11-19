@@ -1139,10 +1139,12 @@ html,body{overflow-x:clip}
   .hero-subtitle{
     width:100%;
     margin-left:0;
+    position:relative;
+    left:calc(-1 * clamp(12px, 3vw, 24px));
     text-align:center;
     white-space:nowrap;
-    font-size:clamp(8px, 1.15vw, 10px);
-    letter-spacing:.12em;
+    font-size:clamp(11px, 1.5vw, 13px);
+    letter-spacing:.1em;
   }
   .hero-lede{font-size:clamp(15px, 1.7vw, 17px);max-width:100%}
   .stats{
