@@ -1090,9 +1090,15 @@ html,body{overflow-x:clip}
   .about-card::after{animation:none;will-change:auto}
   .testimonial-panel{-webkit-backdrop-filter:none;backdrop-filter:none}
   .testimonial-orb{animation:none;filter:blur(24px)}
-  .project-folder--graphic.is-opening .graphic-folder-content{z-index:4;transform:translateY(-76%)}
-  .project-folder--automation.is-opening .automation-folder-content{z-index:4;transform:translateY(-60%)}
-  .project-folder--future.is-opening .future-folder-content{z-index:4;transform:translateY(-44%);transition-duration:.75s}
+  .project-folder--graphic.is-opening .folder-object--graphic{transform:translateY(-8px) scale(1.012)}
+  .project-folder--graphic.is-opening .graphic-folder-content{transform:translateY(-76%);transition-timing-function:cubic-bezier(.16,1,.3,1)}
+  .project-folder--graphic.is-opening .folder-scene--graphic{filter:drop-shadow(0 20px 20px rgba(0,0,0,.25)) drop-shadow(0 0 12px rgba(0,194,255,.24)) drop-shadow(0 0 26px rgba(28,92,255,.16))}
+  .project-folder--automation.is-opening .folder-object--automation{transform:translateY(-8px) scale(1.012)}
+  .project-folder--automation.is-opening .automation-folder-content{transform:translateY(-60%);transition-timing-function:cubic-bezier(.16,1,.3,1)}
+  .project-folder--automation.is-opening .folder-scene--automation{filter:drop-shadow(0 20px 20px rgba(0,0,0,.25)) drop-shadow(0 0 12px rgba(190,66,255,.23)) drop-shadow(0 0 26px rgba(239,35,214,.15))}
+  .project-folder--future.is-opening .folder-object--future{transform:translateY(-8px) scale(1.012)}
+  .project-folder--future.is-opening .future-folder-content{transform:translateY(-44%);transition-timing-function:cubic-bezier(.16,1,.3,1)}
+  .project-folder--future.is-opening .folder-scene--future{filter:drop-shadow(0 20px 20px rgba(0,0,0,.25)) drop-shadow(0 0 12px rgba(190,66,255,.23)) drop-shadow(0 0 26px rgba(239,35,214,.15))}
 }
 
 /* Touch screens use press feedback in place of mouse hover effects. */
@@ -1105,7 +1111,15 @@ html,body{overflow-x:clip}
   }
   .tool-image:active{transform:translateY(-8px) scale(1.08);filter:drop-shadow(0 0 13px rgba(40,201,255,.8)) drop-shadow(0 0 26px rgba(163,57,255,.75))}
   .service-card:active{translate:0 -2px;box-shadow:0 10px 24px rgba(16,26,43,.18)}
-  .project-folder:active:not(.is-opening) .folder-object{transform:translateY(-6px) scale(1.01)}
+  .project-folder--graphic:active .folder-object--graphic{transform:translateY(-8px) scale(1.012)}
+  .project-folder--graphic:active .graphic-folder-content{transform:translateY(-76%)}
+  .project-folder--graphic:active .folder-scene--graphic{filter:drop-shadow(0 20px 20px rgba(0,0,0,.25)) drop-shadow(0 0 12px rgba(0,194,255,.24)) drop-shadow(0 0 26px rgba(28,92,255,.16))}
+  .project-folder--automation:active .folder-object--automation{transform:translateY(-8px) scale(1.012)}
+  .project-folder--automation:active .automation-folder-content{transform:translateY(-60%)}
+  .project-folder--automation:active .folder-scene--automation{filter:drop-shadow(0 20px 20px rgba(0,0,0,.25)) drop-shadow(0 0 12px rgba(190,66,255,.23)) drop-shadow(0 0 26px rgba(239,35,214,.15))}
+  .project-folder--future:active .folder-object--future{transform:translateY(-8px) scale(1.012)}
+  .project-folder--future:active .future-folder-content{transform:translateY(-44%)}
+  .project-folder--future:active .folder-scene--future{filter:drop-shadow(0 20px 20px rgba(0,0,0,.25)) drop-shadow(0 0 12px rgba(190,66,255,.23)) drop-shadow(0 0 26px rgba(239,35,214,.15))}
   .project-gallery-slot--filled[data-project-id]:active .project-gallery-image{transform:scale(1.04);opacity:.9}
   .button:active,.nav-cta:active{transform:translateY(-1px)}
 }

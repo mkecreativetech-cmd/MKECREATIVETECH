@@ -725,7 +725,7 @@ if (projectSelection && projectGallery && projectShowcases && projectGroups.leng
     automation: 'Automation Solutions',
     future: 'Future Projects'
   };
-  const motionDelay = reduceMotion ? 0 : 900;
+  const motionDelay = reduceMotion ? 0 : 720;
   const automationFilters = Array.from(document.querySelectorAll('[data-automation-filter]'));
   const automationSlots = Array.from(document.querySelectorAll('.project-showcase--automation .project-gallery-slot[data-platform]'));
   const setAutomationFilter = (filter) => {
@@ -747,6 +747,11 @@ if (projectSelection && projectGallery && projectShowcases && projectGroups.leng
     folder.addEventListener('click', () => {
       if (activeProjectFolder) return;
       activeProjectFolder = folder.dataset.projectOpen;
+      const openDelay = reduceMotion
+        ? 0
+        : window.matchMedia('(max-width: 700px)').matches
+          ? (activeProjectFolder === 'future' ? 1100 : 900)
+          : motionDelay;
       projectBackButton?.classList.toggle('is-automation', activeProjectFolder === 'automation');
       folder.setAttribute('aria-expanded', 'true');
       projectSelection.classList.add('is-opening');
@@ -765,7 +770,7 @@ if (projectSelection && projectGallery && projectShowcases && projectGroups.leng
         projectGallery.classList.remove('is-leaving');
         requestAnimationFrame(() => projectGallery.classList.add('is-visible'));
         projectBackButton?.focus({ preventScroll: true });
-      }, motionDelay);
+      }, openDelay);
     });
   });
 
