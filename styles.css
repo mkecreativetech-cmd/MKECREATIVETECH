@@ -1021,6 +1021,10 @@ html,body{overflow-x:clip}
   .hero-signature{left:52%;top:42%;width:clamp(190px, 18vw, 245px)}
 }
 
+@media (min-width:701px) and (max-width:1400px){
+  .hero-signature{width:clamp(165px, 16vw, 220px)}
+}
+
 /* Give the About cards the generous right margin shown in the laptop reference. */
 @media (min-width:1101px) and (max-width:1400px){
   main>.about-section>.about-layout{
@@ -1397,7 +1401,10 @@ html,body{overflow-x:clip}
   /* Reframe the portrait within its reserved left column and give the cards the wider side. */
   main>.about-section>.about-portrait{width:40%}
   main>.about-section>.about-portrait>.about-model{
-    left:clamp(-96px, -8vw, -70px);
+    left:0;
+    height:min(84%, 600px);
+    object-fit:contain;
+    object-position:left bottom;
   }
 }
 
@@ -1419,6 +1426,7 @@ html,body{overflow-x:clip}
 @media (min-width:1101px) and (max-width:1400px){
   .hero-copy{width:68%;max-width:920px}
   .hero h1{font-size:clamp(88px, 9.8vw, 136px);line-height:.86}
+  .hero-signature{top:39%}
 }
 
 @media (min-width:701px) and (max-width:1000px){
