@@ -494,7 +494,12 @@ main>.projects-section{height:auto!important;min-height:var(--section-viewport-h
 .scroll-cue svg{display:block;width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 
 /* Interactive 3D project folders */
-.project-folder-selection{--project-folder-gap:clamp(20px,3vw,42px);position:relative;top:64px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--project-folder-gap);align-items:start;max-width:1500px;margin:32px auto 0;transition:opacity .38s ease,transform .38s ease}
+.project-folder-selection{--project-folder-gap:clamp(20px,3vw,42px);position:relative;isolation:isolate;top:64px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--project-folder-gap);align-items:start;max-width:1500px;margin:32px auto 0;transition:opacity .38s ease,transform .38s ease}
+.project-folder-selection::before,.project-folder-selection::after{content:"";position:absolute;inset:4% 2%;z-index:0;border-radius:50%;pointer-events:none}
+.project-folder-selection::before{background:radial-gradient(ellipse at 18% 28%,rgba(28,177,255,.3),transparent 35%),radial-gradient(ellipse at 82% 31%,rgba(210,53,245,.26),transparent 36%),radial-gradient(ellipse at 52% 88%,rgba(83,115,255,.22),transparent 40%);filter:blur(28px);opacity:.52;animation:projectFolderGlowPlay 8s ease-in-out infinite alternate}
+.project-folder-selection::after{inset:0 6%;border-radius:30px;background:linear-gradient(112deg,transparent 28%,rgba(89,220,255,0) 40%,rgba(105,197,255,.11) 47%,rgba(210,125,255,.09) 52%,transparent 66%);background-size:220% 100%;background-position:-130% 0;opacity:.6;animation:projectFolderLightSweep 12s ease-in-out infinite alternate}
+@keyframes projectFolderGlowPlay{from{transform:translate3d(-1.5%,0,0) scale(.96);opacity:.38}to{transform:translate3d(1.5%,-1%,0) scale(1.04);opacity:.7}}
+@keyframes projectFolderLightSweep{from{background-position:-130% 0}to{background-position:130% 0}}
 .project-folder-selection.is-opening{opacity:1;transform:none;pointer-events:none}
 .project-folder-selection.is-returning{opacity:0;transform:translateY(14px) scale(.99)}
 .project-folder-selection[hidden],.project-gallery-screen[hidden],.project-showcases[hidden]{display:none!important}
@@ -737,10 +742,11 @@ html.project-detail-active{overflow:hidden;scrollbar-gutter:auto}
 @media(max-width:700px){.projects-header{transform:translateY(-14px)}.projects-intro h2{font-size:clamp(38px,10vw,54px)}}
 
 /* Scroll entrance sits on wrappers so folder hover and opening transforms stay independent. */
-.project-folder-entrance{min-width:0;transition:transform .9s cubic-bezier(.22,.68,.26,1)}
+.project-folder-entrance{position:relative;z-index:1;min-width:0;transition:transform .9s cubic-bezier(.22,.68,.26,1)}
 .project-folder-entrance.has-folder-entrance:not(.is-folder-in-view){transform:translateY(14px) scale(.94)}
 .project-folder-entrance.is-folder-in-view{transform:none}
 @media(prefers-reduced-motion:reduce){.project-folder-entrance{transform:none!important;transition:none!important}}
+@media(prefers-reduced-motion:reduce){.project-folder-selection::before,.project-folder-selection::after{animation:none}.project-folder-selection::before{opacity:.42}.project-folder-selection::after{background-position:50% 0}}
 
 /* Subtle ambient light behind the Projects section content. */
 main>.projects-section{isolation:isolate}
