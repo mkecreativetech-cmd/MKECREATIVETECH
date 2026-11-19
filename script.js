@@ -749,7 +749,7 @@ if (projectSelection && projectGallery && projectShowcases && projectGroups.leng
       activeProjectFolder = folder.dataset.projectOpen;
       const openDelay = reduceMotion
         ? 0
-        : window.matchMedia('(max-width: 700px)').matches
+        : window.matchMedia('(hover: none)').matches
           ? (activeProjectFolder === 'future' ? 1100 : 900)
           : motionDelay;
       projectBackButton?.classList.toggle('is-automation', activeProjectFolder === 'automation');
