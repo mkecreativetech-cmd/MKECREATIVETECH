@@ -1148,7 +1148,7 @@ html,body{overflow-x:clip}
     letter-spacing:.1em;
   }
   .hero-lede{font-size:clamp(15px, 1.7vw, 17px);max-width:100%}
-  .hero-lede,.hero-actions{position:relative;top:44px}
+  .hero-lede,.hero-actions{position:relative;top:28px}
   .stats{
     position:absolute;
     right:0;
