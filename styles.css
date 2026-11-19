@@ -1260,6 +1260,102 @@ html,body{overflow-x:clip}
   .projects-header{transform:none}
 }
 
+@media(min-width:1401px){
+  .about-layout{
+    display:grid;
+    height:100%;
+    min-height:var(--section-viewport-height, 100svh);
+    grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);
+    gap:clamp(24px, 2.4vw, 40px);
+    align-items:center;
+  }
+  .about-content{
+    grid-column:2;
+    width:100%;
+    max-width:none;
+    margin:0;
+    padding:clamp(20px, 2vw, 32px) 0;
+    transform:none;
+  }
+  .about-content h2{text-align:center}
+  .about-card{
+    margin-block:clamp(12px, 1.2vw, 18px);
+    padding:clamp(18px, 1.5vw, 24px) clamp(20px, 2vw, 30px);
+  }
+}
+
+@media (min-width:1001px) and (max-width:1400px){
+  .about-layout{
+    display:grid;
+    grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);
+    gap:clamp(24px, 2.4vw, 34px);
+    align-items:center;
+    min-height:var(--section-viewport-height, calc(100svh - 64px));
+    padding:clamp(32px, 5vh, 56px) 0;
+  }
+  .about-portrait{
+    inset:0 auto 0 0;
+    width:42%;
+    height:100%;
+    overflow:hidden;
+  }
+  .about-model{
+    left:0;
+    top:auto;
+    bottom:0;
+    height:min(100%, 760px);
+    width:auto;
+    max-width:none;
+    object-fit:contain;
+    object-position:left bottom;
+  }
+  .about-content{
+    grid-column:2;
+    width:100%;
+    max-width:none;
+    margin:0;
+    padding:clamp(16px, 2vw, 26px) 0;
+    transform:none;
+  }
+}
+
+/* Keep About cards in a dedicated right column so they never cover the portrait. */
+@media (min-width:1001px){
+  main>.about-section{height:auto;min-height:var(--section-viewport-height, calc(100svh - 64px))}
+  main>.about-section>.about-layout{
+    display:grid !important;
+    grid-template-columns:minmax(0, .84fr) minmax(0, 1.16fr);
+    column-gap:clamp(20px, 2.2vw, 32px);
+    align-items:center;
+    height:auto;
+    min-height:var(--section-viewport-height, calc(100svh - 64px));
+    padding-block:clamp(32px, 5vh, 56px);
+  }
+  main>.about-section>.about-layout>.about-content{
+    grid-column:2;
+    width:100%;
+    max-width:none;
+    min-width:0;
+    margin:0;
+    padding:clamp(16px, 2vw, 28px) 0;
+    transform:none;
+  }
+  main>.about-section>.about-portrait{
+    width:40%;
+    overflow:hidden;
+    -webkit-mask-image:linear-gradient(to right, #000 0%, #000 78%, transparent 100%);
+    mask-image:linear-gradient(to right, #000 0%, #000 78%, transparent 100%);
+  }
+}
+
+@media (min-width:1001px) and (max-width:1400px){
+  /* Reframe the portrait within its reserved left column and give the cards the wider side. */
+  main>.about-section>.about-portrait{width:40%}
+  main>.about-section>.about-portrait>.about-model{
+    left:clamp(-96px, -8vw, -70px);
+  }
+}
+
 @media (min-width:701px) and (max-width:1000px){
   .project-folder--graphic.is-opening .folder-object--graphic{transform:translateY(-8px) scale(1.012)}
   .project-folder--graphic.is-opening .graphic-folder-content{transform:translateY(-76%);transition-timing-function:cubic-bezier(.16,1,.3,1)}
