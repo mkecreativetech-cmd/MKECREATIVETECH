@@ -1134,6 +1134,7 @@ html,body{overflow-x:clip}
     justify-content:center;
     width:60%;
     padding:0 0 132px;
+    transform:translateY(-80px);
   }
   .hero h1{font-size:clamp(70px, 8.8vw, 88px);line-height:.86}
   .hero-subtitle{
@@ -1147,10 +1148,11 @@ html,body{overflow-x:clip}
     letter-spacing:.1em;
   }
   .hero-lede{font-size:clamp(15px, 1.7vw, 17px);max-width:100%}
+  .hero-lede,.hero-actions{position:relative;top:44px}
   .stats{
     position:absolute;
     right:0;
-    bottom:clamp(48px, 6vh, 72px);
+    bottom:clamp(4px, .8vh, 10px);
     left:0;
     justify-content:flex-start;
     margin:0;
@@ -1160,6 +1162,7 @@ html,body{overflow-x:clip}
 
 @media (min-width:701px) and (max-width:850px){
   .hero-signature{left:60%;right:auto;top:78%;width:30vw}
+  .scroll-brand{top:8px;right:72px;width:46px;height:46px}
 }
 
 @media (min-width:701px) and (max-width:1000px){
