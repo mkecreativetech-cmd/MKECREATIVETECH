@@ -495,11 +495,6 @@ main>.projects-section{height:auto!important;min-height:var(--section-viewport-h
 
 /* Interactive 3D project folders */
 .project-folder-selection{--project-folder-gap:clamp(20px,3vw,42px);position:relative;isolation:isolate;top:64px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--project-folder-gap);align-items:start;max-width:1500px;margin:32px auto 0;transition:opacity .38s ease,transform .38s ease}
-.project-folder-selection::before,.project-folder-selection::after{content:"";position:absolute;inset:4% 2%;z-index:0;border-radius:50%;pointer-events:none}
-.project-folder-selection::before{background:radial-gradient(ellipse at 18% 28%,rgba(28,177,255,.3),transparent 35%),radial-gradient(ellipse at 82% 31%,rgba(210,53,245,.26),transparent 36%),radial-gradient(ellipse at 52% 88%,rgba(83,115,255,.22),transparent 40%);filter:blur(28px);opacity:.52;animation:projectFolderGlowPlay 8s ease-in-out infinite alternate}
-.project-folder-selection::after{inset:0 6%;border-radius:30px;background:linear-gradient(112deg,transparent 28%,rgba(89,220,255,0) 40%,rgba(105,197,255,.11) 47%,rgba(210,125,255,.09) 52%,transparent 66%);background-size:220% 100%;background-position:-130% 0;opacity:.6;animation:projectFolderLightSweep 12s ease-in-out infinite alternate}
-@keyframes projectFolderGlowPlay{from{transform:translate3d(-1.5%,0,0) scale(.96);opacity:.38}to{transform:translate3d(1.5%,-1%,0) scale(1.04);opacity:.7}}
-@keyframes projectFolderLightSweep{from{background-position:-130% 0}to{background-position:130% 0}}
 .project-folder-selection.is-opening{opacity:1;transform:none;pointer-events:none}
 .project-folder-selection.is-returning{opacity:0;transform:translateY(14px) scale(.99)}
 .project-folder-selection[hidden],.project-gallery-screen[hidden],.project-showcases[hidden]{display:none!important}
@@ -746,14 +741,16 @@ html.project-detail-active{overflow:hidden;scrollbar-gutter:auto}
 .project-folder-entrance.has-folder-entrance:not(.is-folder-in-view){transform:translateY(14px) scale(.94)}
 .project-folder-entrance.is-folder-in-view{transform:none}
 @media(prefers-reduced-motion:reduce){.project-folder-entrance{transform:none!important;transition:none!important}}
-@media(prefers-reduced-motion:reduce){.project-folder-selection::before,.project-folder-selection::after{animation:none}.project-folder-selection::before{opacity:.42}.project-folder-selection::after{background-position:50% 0}}
 
 /* Subtle ambient light behind the Projects section content. */
 main>.projects-section{isolation:isolate}
 main>.projects-section::before{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse at 22% 72%,rgba(8,123,255,.18),transparent 34%),radial-gradient(ellipse at 28% 78%,rgba(0,217,255,.12),transparent 38%),radial-gradient(ellipse at 78% 72%,rgba(66,16,168,.17),transparent 35%),radial-gradient(ellipse at 74% 80%,rgba(117,21,209,.13),transparent 39%),radial-gradient(ellipse at 84% 78%,rgba(208,0,255,.09),transparent 38%),radial-gradient(ellipse at 50% 76%,rgba(66,16,168,.035),transparent 34%);filter:blur(24px);opacity:.08;animation:projectsAmbientGlow 10s ease-in-out infinite alternate}
+main>.projects-section::after{content:"";position:absolute;inset:0;z-index:0;pointer-events:none;background:radial-gradient(ellipse at 18% 26%,rgba(28,177,255,.16),transparent 38%),radial-gradient(ellipse at 82% 32%,rgba(210,53,245,.14),transparent 40%),linear-gradient(112deg,transparent 24%,rgba(89,220,255,0) 40%,rgba(105,197,255,.075) 48%,rgba(210,125,255,.065) 53%,transparent 68%);background-size:100% 100%,100% 100%,220% 100%;background-position:0 0,0 0,-120% 0;opacity:.68;animation:projectsTemplateLightSweep 18s ease-in-out infinite alternate}
 .projects-inner{position:relative;z-index:1}
 @keyframes projectsAmbientGlow{from{opacity:.08}to{opacity:.45}}
+@keyframes projectsTemplateLightSweep{from{background-position:0 0,0 0,-120% 0}to{background-position:0 0,0 0,120% 0}}
 @media(prefers-reduced-motion:reduce){main>.projects-section::before{animation:none;opacity:.08}}
+@media(prefers-reduced-motion:reduce){main>.projects-section::after{animation:none;background-position:0 0,0 0,50% 0;opacity:.34}}
 
 /* Client testimonials */
 main>.testimonials-section{height:auto!important;min-height:clamp(410px,36vw,480px)!important;display:flex;align-items:center;padding:clamp(24px,4vh,42px) 0;background:transparent;color:#fff;overflow:hidden}
