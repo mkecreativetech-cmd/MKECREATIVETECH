@@ -588,7 +588,7 @@ main>.projects-section{height:auto!important;min-height:var(--section-viewport-h
 /* Reserved home for future portfolio projects. */
 .project-folder-entrance--future{grid-column:1/-1;width:min(100%,760px);justify-self:center;margin-top:-10px}
 .project-folder--future{--folder-deep:#361077;--folder-mid:#6a27c8;--folder-light:#e046de;--folder-glow:rgba(190,66,255,.25)}
-.folder-scene--future{width:100%;max-width:680px;height:auto;aspect-ratio:997 / 763;margin-inline:auto;perspective:none;filter:drop-shadow(0 20px 20px rgba(0,0,0,.25)) drop-shadow(0 0 10px rgba(49,181,255,.14)) drop-shadow(0 0 18px rgba(203,72,255,.11));transition:filter .75s ease-in-out}
+.folder-scene--future{width:100%;max-width:740px;height:auto;aspect-ratio:997 / 763;margin-inline:auto;perspective:none;filter:drop-shadow(0 20px 20px rgba(0,0,0,.25)) drop-shadow(0 0 10px rgba(49,181,255,.14)) drop-shadow(0 0 18px rgba(203,72,255,.11));transition:filter .75s ease-in-out}
 .folder-scene--future::after{content:"";position:absolute;z-index:0;left:6%;right:6%;bottom:-4%;height:9%;border-radius:50%;background:radial-gradient(ellipse,rgba(33,156,255,.34),rgba(221,54,218,.22) 48%,transparent 76%);filter:blur(14px);pointer-events:none;animation:futureFolderGlow 4.5s ease-in-out infinite alternate}
 @keyframes futureFolderGlow{from{opacity:.62;transform:scaleX(.94)}to{opacity:1;transform:scaleX(1.04)}}
 .folder-scene--future::after{content:"";position:absolute;z-index:0;left:6%;right:6%;bottom:-4%;height:8%;border-radius:50%;background:radial-gradient(ellipse,rgba(190,66,255,.24),rgba(239,35,214,.12) 48%,transparent 76%);filter:blur(14px);pointer-events:none}
