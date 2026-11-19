@@ -725,7 +725,7 @@ if (projectSelection && projectGallery && projectShowcases && projectGroups.leng
     automation: 'Automation Solutions',
     future: 'Future Projects'
   };
-  const motionDelay = reduceMotion ? 0 : 720;
+  const motionDelay = reduceMotion ? 0 : 900;
   const automationFilters = Array.from(document.querySelectorAll('[data-automation-filter]'));
   const automationSlots = Array.from(document.querySelectorAll('.project-showcase--automation .project-gallery-slot[data-platform]'));
   const setAutomationFilter = (filter) => {

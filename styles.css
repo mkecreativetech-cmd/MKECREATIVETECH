@@ -608,7 +608,7 @@ main>.projects-section{height:auto!important;min-height:var(--section-viewport-h
 .project-folder--future.is-opening .folder-object--future{transform:translateY(-12px) scale(1.035)}
 .project-folder--future.is-opening .future-folder-content{transform:translateY(-18%)}
 @media(max-width:760px){.project-folder-entrance--future{grid-column:1;width:100%;margin-top:0}.folder-scene--future{max-width:500px}}
-@media(max-width:420px){.folder-scene--future{width:118%}}
+@media(max-width:420px){.folder-scene--future{top:-10px;width:112%}}
 @media(prefers-reduced-motion:reduce){.folder-object--future,.future-folder-content{transition:none!important}.folder-scene--future::after{animation:none;opacity:.8}}
 
 /* Full-screen, project-specific detail view. */
@@ -1090,6 +1090,9 @@ html,body{overflow-x:clip}
   .about-card::after{animation:none;will-change:auto}
   .testimonial-panel{-webkit-backdrop-filter:none;backdrop-filter:none}
   .testimonial-orb{animation:none;filter:blur(24px)}
+  .project-folder--graphic.is-opening .graphic-folder-content{z-index:4;transform:translateY(-76%)}
+  .project-folder--automation.is-opening .automation-folder-content{z-index:4;transform:translateY(-60%)}
+  .project-folder--future.is-opening .future-folder-content{z-index:4;transform:translateY(-44%);transition-duration:.75s}
 }
 
 /* Touch screens use press feedback in place of mouse hover effects. */
@@ -1102,7 +1105,7 @@ html,body{overflow-x:clip}
   }
   .tool-image:active{transform:translateY(-8px) scale(1.08);filter:drop-shadow(0 0 13px rgba(40,201,255,.8)) drop-shadow(0 0 26px rgba(163,57,255,.75))}
   .service-card:active{translate:0 -2px;box-shadow:0 10px 24px rgba(16,26,43,.18)}
-  .project-folder:active .folder-object{transform:translateY(-6px) scale(1.01)}
+  .project-folder:active:not(.is-opening) .folder-object{transform:translateY(-6px) scale(1.01)}
   .project-gallery-slot--filled[data-project-id]:active .project-gallery-image{transform:scale(1.04);opacity:.9}
   .button:active,.nav-cta:active{transform:translateY(-1px)}
 }
