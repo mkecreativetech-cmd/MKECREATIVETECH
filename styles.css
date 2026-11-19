@@ -1019,6 +1019,7 @@ html,body{overflow-x:clip}
 
 /* Hide only the portrait image on mobile; keep its contact actions available. */
 @media(max-width:700px){
+  .hero:before{background:linear-gradient(90deg,rgba(5,10,24,.72) 0%,rgba(5,10,24,.35) 34%,rgba(5,10,24,.08) 57%,rgba(5,10,24,0) 72%)}
   .hero:after{background-position:82% center}
   .about-model{display:none}
   .about-content>.section-kicker{display:none}
@@ -1037,15 +1038,15 @@ html,body{overflow-x:clip}
     width:100%;
     margin-inline:auto;
     text-align:center;
-    transform:translateY(clamp(60px, 13svh, 94px));
+    transform:translateY(clamp(96px, 19svh, 132px));
   }
   .hero-subtitle{margin-left:0}
   .hero h1{margin:8px auto 10px;line-height:.82}
   .hero-line{margin-inline:auto}
   .hero-lede{margin-inline:auto;font-size:13px;line-height:1.35}
-  .hero-actions{margin-top:14px;gap:8px}
+  .hero-actions{margin-top:44px;gap:8px}
   .hero-actions,.stats{justify-content:center}
-  .stats{margin-top:24px}
+  .stats{margin-top:44px}
   .stats>div{padding-inline:8px}
   .stats>div{text-align:center}
 }
