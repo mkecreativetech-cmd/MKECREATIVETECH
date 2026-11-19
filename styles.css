@@ -585,6 +585,29 @@ main>.projects-section{height:auto!important;min-height:var(--section-viewport-h
 @media(max-width:760px){.project-folder-selection{grid-template-columns:minmax(0,1fr);max-width:560px;gap:30px}.folder-scene{height:clamp(280px,68vw,360px)}.folder-object{inset:14px 5px 0}.folder-file{height:clamp(128px,31vw,156px);padding:11px}.folder-label{font-size:clamp(18px,5vw,25px)}.folder-label-meta{font-size:9px}.folder-choice-caption{margin-top:10px}.project-gallery-toolbar{align-items:flex-start;flex-direction:column;gap:8px}.project-gallery-screen{--project-gallery-rise:48px}.project-gallery-screen .project-showcase{min-height:clamp(540px,78vh,760px);padding:18px 20px 20px}.project-gallery-screen .project-showcase--automation{display:flex;align-items:stretch;flex-direction:column;gap:12px}.project-gallery-screen .project-showcase--automation .project-showcase-heading h3{font-size:15px}.project-gallery-screen .project-showcase--automation .automation-project-filters{justify-content:flex-end}.project-gallery-slots{max-height:62vh;grid-auto-rows:300px;gap:12px;padding:12px}.project-gallery-slot::after{min-height:48px;padding-inline:14px;font-size:12px}.automation-project-filter{min-height:32px;padding-inline:13px}}
 @media(max-width:1399px){.project-gallery-image{object-fit:contain}}
 
+/* Reserved home for future portfolio projects. */
+.project-folder-entrance--future{grid-column:1/-1;width:min(100%,760px);justify-self:center;margin-top:-10px}
+.project-folder--future{--folder-deep:#361077;--folder-mid:#6a27c8;--folder-light:#e046de;--folder-glow:rgba(190,66,255,.25)}
+.folder-scene--future{width:100%;max-width:680px;height:auto;aspect-ratio:997 / 763;margin-inline:auto;perspective:none;filter:drop-shadow(0 20px 20px rgba(0,0,0,.25)) drop-shadow(0 0 10px rgba(49,181,255,.14)) drop-shadow(0 0 18px rgba(203,72,255,.11));transition:filter .75s ease-in-out}
+.folder-scene--future::after{content:"";position:absolute;z-index:0;left:6%;right:6%;bottom:-4%;height:9%;border-radius:50%;background:radial-gradient(ellipse,rgba(33,156,255,.34),rgba(221,54,218,.22) 48%,transparent 76%);filter:blur(14px);pointer-events:none;animation:futureFolderGlow 4.5s ease-in-out infinite alternate}
+@keyframes futureFolderGlow{from{opacity:.62;transform:scaleX(.94)}to{opacity:1;transform:scaleX(1.04)}}
+.folder-scene--future::after{content:"";position:absolute;z-index:0;left:6%;right:6%;bottom:-4%;height:8%;border-radius:50%;background:radial-gradient(ellipse,rgba(190,66,255,.24),rgba(239,35,214,.12) 48%,transparent 76%);filter:blur(14px);pointer-events:none}
+.folder-object--future{inset:0;z-index:1;transform:none;transform-style:flat;transition:transform .65s cubic-bezier(.2,.78,.25,1)}
+.future-folder-back,.future-folder-front{top:0;left:2.692%;width:94.616%;height:100%;object-fit:contain}
+.future-folder-back{z-index:1}
+.future-folder-content{z-index:2;left:2.692%;top:16.5%;width:94.616%;transition:transform 1s cubic-bezier(.22,.68,.26,1)}
+.future-folder-front{z-index:3}
+.project-showcase--future{background:linear-gradient(rgba(255,255,255,.94),rgba(255,255,255,.96)) padding-box,linear-gradient(125deg,rgba(35,156,255,.72),rgba(128,76,228,.62),rgba(221,54,218,.7)) border-box}
+.project-showcase--future .project-showcase-heading h3{color:#7235bd}
+@media(hover:hover){.project-folder--future:hover .folder-object--future{transform:translateY(-8px) scale(1.012)}.project-folder--future:hover .future-folder-content{transform:translateY(-44%)}.project-folder--future:hover .folder-scene--future{filter:drop-shadow(0 20px 20px rgba(0,0,0,.25)) drop-shadow(0 0 12px rgba(190,66,255,.23)) drop-shadow(0 0 26px rgba(239,35,214,.15));transition-timing-function:cubic-bezier(.16,1,.3,1)}}
+.project-folder--future:focus-visible .folder-object--future{transform:translateY(-8px) scale(1.012)}
+.project-folder--future:focus-visible .future-folder-content{transform:translateY(-14%)}
+.project-folder--future.is-opening .folder-object--future{transform:translateY(-12px) scale(1.035)}
+.project-folder--future.is-opening .future-folder-content{transform:translateY(-18%)}
+@media(max-width:760px){.project-folder-entrance--future{grid-column:1;width:100%;margin-top:0}.folder-scene--future{max-width:500px}}
+@media(max-width:420px){.folder-scene--future{width:100%}}
+@media(prefers-reduced-motion:reduce){.folder-object--future,.future-folder-content{transition:none!important}.folder-scene--future::after{animation:none;opacity:.8}}
+
 /* Full-screen, project-specific detail view. */
 .project-gallery-slot--filled[data-project-id]{cursor:pointer}
 .project-gallery-slot--filled[data-project-id]:focus-visible{outline:3px solid #08b9e9;outline-offset:4px}
@@ -715,8 +738,8 @@ html.project-detail-active{overflow:hidden;scrollbar-gutter:auto}
 
 /* Scroll entrance sits on wrappers so folder hover and opening transforms stay independent. */
 .project-folder-entrance{min-width:0;transition:transform .9s cubic-bezier(.22,.68,.26,1)}
-.project-folder-selection.has-folder-entrance:not(.is-folder-in-view) .project-folder-entrance{transform:translateY(14px) scale(.94)}
-.project-folder-selection.is-folder-in-view .project-folder-entrance{transform:none}
+.project-folder-entrance.has-folder-entrance:not(.is-folder-in-view){transform:translateY(14px) scale(.94)}
+.project-folder-entrance.is-folder-in-view{transform:none}
 @media(prefers-reduced-motion:reduce){.project-folder-entrance{transform:none!important;transition:none!important}}
 
 /* Subtle ambient light behind the Projects section content. */

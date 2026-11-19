@@ -707,22 +707,23 @@ const projectBackButton = document.querySelector('[data-project-back]');
 const projectGalleryCurrent = document.querySelector('.project-gallery-current');
 let activeProjectFolder = '';
 
-if (projectSelection && !reduceMotion && 'IntersectionObserver' in window) {
-  projectSelection.classList.add('has-folder-entrance');
+const projectFolderEntrances = Array.from(document.querySelectorAll('.project-folder-entrance'));
+if (projectFolderEntrances.length && !reduceMotion && 'IntersectionObserver' in window) {
+  projectFolderEntrances.forEach((entrance) => entrance.classList.add('has-folder-entrance'));
   const folderEntranceObserver = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-      if (entry.isIntersecting) projectSelection.classList.add('is-folder-in-view');
-      else projectSelection.classList.remove('is-folder-in-view');
+      entry.target.classList.toggle('is-folder-in-view', entry.isIntersecting);
     });
   }, { threshold: 0.18, rootMargin: '0px 0px -6% 0px' });
 
-  folderEntranceObserver.observe(projectSelection);
+  projectFolderEntrances.forEach((entrance) => folderEntranceObserver.observe(entrance));
 }
 
 if (projectSelection && projectGallery && projectShowcases && projectGroups.length) {
   const folderNames = {
     graphic: 'Graphic Design Projects',
-    automation: 'Automation Solutions'
+    automation: 'Automation Solutions',
+    future: 'Future Projects'
   };
   const motionDelay = reduceMotion ? 0 : 720;
   const automationFilters = Array.from(document.querySelectorAll('[data-automation-filter]'));
