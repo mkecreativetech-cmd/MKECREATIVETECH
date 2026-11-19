@@ -1259,4 +1259,9 @@ html,body{overflow-x:clip}
   .hero-subtitle{font-size:10px;letter-spacing:.17em}
 }
 
+main>.projects-section:has(.project-gallery-screen.is-visible, .project-gallery-screen.is-leaving) .projects-header{
+  visibility:hidden;
+  opacity:0;
+}
+
 
