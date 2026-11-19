@@ -1427,6 +1427,48 @@ html,body{overflow-x:clip}
   }
 }
 
+/* Compact the About templates for a 1280x800 laptop viewport. */
+@media (min-width:1101px) and (max-width:1300px) and (max-height:850px){
+  main>.about-section>.about-portrait{
+    width:55%;
+    overflow:visible;
+    -webkit-mask-image:none;
+    mask-image:none;
+  }
+  main>.about-section>.about-portrait>.about-model{
+    left:clamp(-88px, -6vw, -42px);
+    -webkit-mask-image:none;
+    mask-image:none;
+  }
+  main>.about-section{
+    background-image:url("assets/background%20about%20me.png");
+    background-position:center center;
+    background-size:cover;
+    background-repeat:no-repeat;
+  }
+  main>.about-section>.about-layout{
+    width:min(1180px, calc(100% - 64px));
+    grid-template-columns:minmax(0, .9fr) minmax(0, 1.1fr);
+    column-gap:24px;
+    min-height:calc(100svh - 64px);
+    padding-block:22px;
+  }
+  main>.about-section>.about-layout>.about-content{padding:8px 0}
+  main>.about-section .about-content h2{font-size:clamp(26px, 2.4vw, 32px);margin-bottom:16px}
+  main>.about-section .about-card{
+    grid-template-columns:52px minmax(0, 1fr);
+    gap:14px;
+    padding:14px 18px;
+    margin-block:9px;
+    border-radius:24px;
+  }
+  main>.about-section .about-icon{width:48px;height:48px}
+  main>.about-section .about-icon svg{width:30px;height:30px}
+  main>.about-section .about-card h3{font-size:clamp(19px, 1.65vw, 22px);margin-bottom:4px}
+  main>.about-section .card-overline{font-size:10px}
+  main>.about-section .about-card>div>p:last-child{font-size:14px;line-height:1.28}
+}
+
 /* Keep all five Services cards on one row beside the intro on desktop. */
 @media (min-width:1001px){
   .services-certificates-section .services-layout{
