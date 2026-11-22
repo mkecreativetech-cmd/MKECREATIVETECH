@@ -643,9 +643,12 @@ html.project-detail-active{overflow:hidden;scrollbar-gutter:auto}
 .project-detail-lower[hidden]{display:none!important}
 .project-detail-booking{position:sticky;top:102px;align-self:start;display:flex;flex-direction:column;align-items:stretch;gap:14px}
 .project-detail-action{display:inline-flex;align-items:center;justify-content:center;gap:14px;min-height:58px;padding:0 24px;border:1px solid rgba(35,74,125,.17);border-radius:999px;background:linear-gradient(180deg,#fff,#f3f6fc);color:#183251;font:800 17px var(--sans);text-decoration:none;cursor:pointer;box-shadow:0 8px 20px rgba(17,41,83,.1),inset 0 1px 0 rgba(255,255,255,.95);transition:transform .22s ease,box-shadow .22s ease,border-color .22s ease}
+.project-detail-action[hidden]{display:none!important}
 .project-detail-action:hover{transform:translateY(-3px);border-color:rgba(8,174,234,.45);box-shadow:0 13px 26px rgba(17,71,131,.16),inset 0 1px 0 #fff}
-.project-detail-book-call{position:relative;isolation:isolate;overflow:hidden;min-width:220px;padding-inline:62px;border:1px solid rgba(255,255,255,.58);background:linear-gradient(110deg,#7628c8,#9734dc 56%,#682bd2);color:#fff;box-shadow:0 10px 25px rgba(111,40,186,.22),inset 0 1px 0 rgba(255,255,255,.32)}
-.project-detail-book-call:hover{border-color:rgba(255,255,255,.8);box-shadow:0 14px 32px rgba(111,40,186,.34),0 0 20px rgba(167,74,229,.2),inset 0 1px 0 rgba(255,255,255,.5)}
+.project-detail-book-call{position:relative;isolation:isolate;overflow:hidden;min-width:220px;padding-inline:62px;border:1px solid rgba(255,255,255,.54);background:linear-gradient(110deg,#08aeea,#087bff 58%,#4256f3);color:#fff;box-shadow:0 7px 18px rgba(8,123,255,.22),inset 0 1px 0 rgba(255,255,255,.35)}
+.project-detail-book-call:hover{border-color:rgba(255,255,255,.8);box-shadow:0 11px 24px rgba(8,123,255,.3),inset 0 1px 0 rgba(255,255,255,.45)}
+.project-detail-book-call.is-automation{border-color:rgba(255,255,255,.4);background:linear-gradient(110deg,#7725c9,#b326dd 62%,#762ce1);box-shadow:0 7px 18px rgba(133,47,197,.24),inset 0 1px 0 rgba(255,255,255,.28)}
+.project-detail-book-call.is-automation:hover{box-shadow:0 11px 24px rgba(133,47,197,.34),inset 0 1px 0 rgba(255,255,255,.4)}
 .project-detail-book-label{position:relative;z-index:1;white-space:nowrap}
 .project-detail-phone{position:absolute;z-index:2;top:50%;right:5px;display:grid;place-items:center;width:48px;height:48px;border-radius:50%;background:#35105f;color:#fff;opacity:0;pointer-events:none;transform:translate(135%,-50%) rotate(28deg) scale(.78);transition:transform .52s cubic-bezier(.18,.86,.25,1),opacity .18s ease;box-shadow:inset 0 1px 0 rgba(255,255,255,.18)}
 .project-detail-phone svg{width:25px;height:25px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round;transform:rotate(-55deg) scale(.72);transition:transform .48s cubic-bezier(.18,.86,.25,1)}

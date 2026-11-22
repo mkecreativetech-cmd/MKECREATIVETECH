@@ -803,6 +803,23 @@ if (projectSelection && projectGallery && projectShowcases && projectGroups.leng
 
 const projectDetailData = [
   {
+    id: 'wterly-branding',
+    title: 'Wterly Eau de Parfum – Branding & Packaging Design',
+    category: 'Graphic Design · Branding & Packaging',
+    images: [
+      { src: 'assets/wterly/wterly%201.png', alt: 'Wterly Eau de Parfum black and gold perfume packaging' },
+      { src: 'assets/wterly/wterly%202.png', alt: 'Wterly Eau de Parfum bottle and packaging presentation' }
+    ],
+    video: null,
+    client: '', duration: '',
+    overview: 'Wterly Eau de Parfum is a luxury fragrance brand created to represent elegance, sophistication, and individuality. Designed with a refined black-and-gold identity, the product communicates a premium fragrance experience through its visual presentation. More than a scent, it represents a feeling, a statement of confidence, and a lasting impression.\n\nInspired by the timeless appeal of luxury fragrances, Wterly combines minimalist elements with elegant details. Its identity is built around a lotus-inspired symbol, flowing gold accents, and sophisticated typography to create a brand that feels exclusive, memorable, and refined.',
+    objectives: 'Understanding the Need\nThe product needed a visual identity that could communicate luxury and quality while remaining clean, cohesive, and recognizable. The packaging had to reflect the premium character of the fragrance, from the perfume bottle to its outer box. Every element needed to work together to establish a consistent brand experience. The challenge was to create packaging that communicates luxury, elegance, and sophistication while making the product visually distinctive.\n\nCrafting the Creative Direction\nThe creative direction was built around a black-and-gold visual theme. Black represents sophistication, mystery, and timeless elegance, while gold adds a sense of exclusivity and refinement. Flowing gold wave elements introduce movement and visual depth against the dark background. A lotus-inspired symbol serves as the brand’s visual signature, representing beauty and elegance.\n\nThe Challenge\nThe identity needed to feel premium without becoming overly decorative. The design balances visual richness with simplicity and maintains consistency across different packaging applications. The perfume box, bottle label, and overall presentation share the same visual language.',
+    role: 'Finding the Solution\nThe approach focused on creating a unified visual identity through consistent colors, typography, and brand elements. The black packaging provides a strong foundation, while gold accents highlight the logo, product name, and decorative patterns. The bottle and packaging complement each other, resulting in a cohesive presentation that strengthens brand recognition.',
+    process: 'The Design Process\nBrand Symbolism: The lotus-inspired logo represents elegance, beauty, and refinement.\n\nPackaging & Structure: The rectangular perfume box complements the 50 mL fragrance bottle, with a coordinated front, side, and back layout.\n\nTypography: Elegant serif typography communicates sophistication, while clean, spaced lettering enhances readability and adds a premium feel.\n\nColor & Texture: Deep black and metallic gold establish a luxurious atmosphere, enhanced by flowing gold wave patterns and subtle reflective details.\n\nBottle Label Design: The front label highlights the Wterly brand and fragrance name, while the back label accommodates product information and supporting details.',
+    results: ['The final design presents Wterly as a sophisticated and premium fragrance brand.', 'The packaging translates the brand identity into a cohesive visual experience, with every component contributing to its overall appeal.', 'Elegant yet bold, combining dark tones with striking gold details.', 'Minimal yet luxurious, balancing simplicity with refined decoration.', 'Consistent yet distinctive, maintaining a unified identity across the bottle and packaging.', 'Wterly transforms the presentation of a fragrance into a visual expression of elegance and individuality. More than a scent, it’s a feeling.'],
+    externalLink: ''
+  },
+  {
     id: 'ai-job-scraper',
     title: 'AI Job Scraper + Resume Optimizer',
     category: 'Automation Solutions · N8N',
@@ -984,6 +1001,10 @@ if (projectDetailDialog) {
     detailTitle.textContent = project.title;
     detailCategory.textContent = project.category || '';
     detailCategory.hidden = !project.category;
+    const isAutomationProject = /automation solutions/i.test(project.category || '');
+    detailWatchDemo.hidden = !isAutomationProject;
+    detailWorkflowButton.hidden = !isAutomationProject;
+    detailBookCall?.classList.toggle('is-automation', isAutomationProject);
     detailBackButton?.classList.toggle('is-automation', /automation solutions/i.test(project.category || ''));
 
     const images = Array.isArray(project.images) ? project.images : [];
