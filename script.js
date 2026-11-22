@@ -803,6 +803,26 @@ if (projectSelection && projectGallery && projectShowcases && projectGroups.leng
 
 const projectDetailData = [
   {
+    id: 'moncy-branding',
+    title: 'Moncy Coffee – Brand Identity & Visual Branding',
+    category: 'Graphic Design · Brand Identity',
+    images: [
+      { src: 'assets/moncy/moncy%201.png', alt: 'Moncy Coffee brand identity and visual branding' },
+      { src: 'assets/moncy/moncy%202.png', alt: 'Moncy Coffee packaging and brand applications' },
+      { src: 'assets/moncy/moncy%203.png', alt: 'Moncy Coffee visual identity design' },
+      { src: 'assets/moncy/moncy%204.png', alt: 'Moncy Coffee brand graphics and packaging' },
+      { src: 'assets/moncy/moncy%205.png', alt: 'Moncy Coffee brand presentation' }
+    ],
+    video: null,
+    client: '', duration: '',
+    overview: 'Moncy Coffee is a modern coffee and snack brand that brings together coffee, sweets, pastries, and Filipino kakanin in one youthful and welcoming experience. Built around the idea of making everyday coffee moments more enjoyable, the brand combines familiar comfort with a fresh street-style personality. It aims to create a space where young adults can enjoy good coffee and satisfying treats without feeling too formal or intimidating.',
+    objectives: 'Understanding the Need\nThe brand needed a visual identity that feels modern, playful, and recognizable while remaining approachable to its target audience. Since Moncy Coffee offers more than just coffee, the identity had to represent a wider range of products, from bottled coffee and sweet treats to pastries and traditional Filipino kakanin. The challenge was to create a brand that stands out in a competitive coffee market without losing its soft, friendly, and welcoming character. The central question was how to create a street-inspired coffee brand that feels bold and youthful while remaining warm and approachable.\n\nCrafting the Creative Direction\nThe creative direction combined modern streetwear aesthetics with playful café branding. Bold script typography became the foundation of the identity, giving the logo a distinctive and energetic personality. A friendly coffee cup mascot wearing sunglasses and sneakers represents the brand’s youthful, laid-back character. Orange, blue, black, and white create strong contrast while keeping the overall appearance clean and balanced. The goal was to make the identity cool and expressive without becoming too loud or overwhelming.\n\nThe Challenge\nThe identity needed to balance a street-style concept with the welcoming atmosphere expected from a coffee and food brand. It needed to appeal to young adults while remaining suitable for different products, including traditional Filipino snacks. The logo, mascot, packaging, storefront, and social media materials also needed to maintain a consistent visual direction.',
+    role: 'Finding the Solution\nThe solution was to build a flexible visual identity around recognizable typography, a memorable mascot, and a consistent color system. The coffee cup mascot serves as the brand’s visual character, making the identity more personal and recognizable. The bold script logo establishes its personality, while orange and blue accents add energy and distinction. These elements were applied consistently across bottled coffee stickers, takeaway packaging, storefront signage, and Facebook branding. The result is a cohesive identity connecting the brand’s products and creating a recognizable experience across customer touchpoints.',
+    process: 'The Design Process\nTypography: Bold, groovy script lettering for the main logo, paired with clean and readable secondary fonts.\n\nColor Palette: Orange (#FF7A00), blue (#0D47FF), black (#000000), and white (#FFFFFF) create a vibrant yet balanced visual identity.\n\nLogo & Mascot: A distinctive Moncy Coffee wordmark paired with a friendly coffee cup character wearing sunglasses and sneakers.\n\nGraphic Elements: Checkerboard patterns and flowing organic shapes introduce a modern street-style aesthetic.\n\nPackaging System: Coordinated bottle stickers, takeaway cups, and paper bags create consistency across product presentations.\n\nBrand Applications: Storefront signage and Facebook page graphics extend the identity into physical and digital spaces.',
+    results: ['The final identity presents Moncy Coffee as a youthful, modern, and approachable coffee brand with a distinctive street-style personality.', 'The design brings its different products together under one recognizable visual system.', 'Bold yet approachable: expressive graphics with a welcoming personality.', 'Playful yet cohesive: a memorable mascot and consistent visual elements.', 'Modern yet familiar: contemporary street-style branding blended with the comfort of Filipino food culture.', 'Flexible and recognizable: adapts across bottled coffee, packaging, storefront signage, and social media.', 'With this identity, Moncy Coffee is positioned to build a recognizable presence, connect with young coffee lovers, and grow into a brand that offers more than coffee: a place for coffee, sweets, pastries, kakanin, and everyday moments worth enjoying.'],
+    externalLink: ''
+  },
+  {
     id: 'wterly-branding',
     title: 'Wterly Eau de Parfum – Branding & Packaging Design',
     category: 'Graphic Design · Branding & Packaging',
