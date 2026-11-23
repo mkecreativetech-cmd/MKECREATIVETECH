@@ -843,6 +843,26 @@ const projectDetailData = [
     externalLink: ''
   },
   {
+    id: 'mke-clothing-brand',
+    title: 'MKE Design – Clothing Brand Identity & Apparel Design',
+    category: 'Graphic Design · Brand Identity & Apparel',
+    images: [
+      { src: 'assets/MKE/mke-1.jpg', alt: 'MKE Design clothing brand identity presentation' },
+      { src: 'assets/MKE/mke-2.jpg', alt: 'MKE Design streetwear apparel graphic' },
+      { src: 'assets/MKE/mke-3.jpg', alt: 'MKE Design skull mascot and motivational streetwear artwork' },
+      { src: 'assets/MKE/mke-4.jpg', alt: 'MKE Design apparel branding and shirt application' },
+      { src: 'assets/MKE/mke-5.jpg', alt: 'MKE Design graphic artwork without text' }
+    ],
+    video: { src: 'assets/MKE/video_2026-08-27_13-27-14.mp4', type: 'video' },
+    client: 'MKE Design (Motivation Kill Excuses)', duration: '',
+    overview: 'MKE Design (Motivation Kill Excuses) is a streetwear-inspired clothing brand built around motivation, individuality, and self-expression. With a bold identity and a strong message, the brand represents a mindset of pushing beyond limitations, taking action, and refusing to make excuses.',
+    objectives: 'Understanding the Need\nThe goal was to create a clothing identity that goes beyond simply putting graphics on shirts. MKE Design needed a recognizable visual style that reflects its motivational message while capturing the bold attitude of modern streetwear.\n\nThe challenge was to develop a design that feels edgy, expressive, and memorable without making the overall branding look overcrowded. Every detail needed to communicate the brand’s personality, from its logo and signature mascot to the graphics printed on the apparel.\n\nThe Challenge\nOne of the main challenges was balancing the brand’s aggressive streetwear aesthetic with its motivational message. The graphics needed to feel bold enough to attract attention while remaining visually organized and recognizable. Another consideration was maintaining consistency between the front and back of the shirt, ensuring that the smaller chest logo and larger back illustration worked together as one cohesive identity.',
+    role: 'Crafting the Creative Direction\nThe creative direction centered on bold streetwear aesthetics, combining gothic-inspired typography, striking illustrations, and a strong black-and-white foundation with vibrant pink accents.\n\nThe visual concept revolves around the brand’s signature skull mascot featuring an exposed brain, symbolizing mindset, awareness, and the power of motivation. Crossed bones and aggressive facial expressions add character, giving the identity a rebellious and distinctive streetwear personality.\n\nRather than following a minimalist approach, the direction embraces oversized graphics, statement typography, and detailed compositions that make each apparel piece stand out.\n\nFinding the Solution\nThe solution was to establish a recognizable mascot-driven visual identity supported by a consistent typography and color system. The skull-and-brain illustration became the central visual signature of MKE Design, while the gothic lettering reinforced its rebellious and bold personality. The motivational message, “Motivation Kill Excuses,” was incorporated into the overall identity to give the brand a stronger purpose beyond fashion. The result is an apparel concept that combines streetwear culture, graphic illustration, and motivational storytelling.',
+    process: 'Every element was developed to strengthen the brand’s visual identity and translate its personality into wearable graphics:\n\nLogo & Mascot: A custom skull-and-crossbones illustration with a pink brain, representing mindset, awareness, and determination.\n\nTypography: Bold gothic and blackletter-inspired fonts paired with condensed supporting typography for a powerful streetwear aesthetic.\n\nColor Palette: Black, white, and vibrant pink create a high-contrast identity that feels edgy, modern, and recognizable.\n\nFront Design: A small circular chest emblem provides a clean and understated brand signature.\n\nBack Design: An oversized graphic composition featuring the mascot, statement typography, and motivational messaging creates a strong visual impact.\n\nApparel Application: The identity was applied to oversized black T-shirts, maintaining a consistent look across front and back placements.',
+    results: ['The final design delivers a bold and recognizable streetwear identity that gives MKE Design its own visual personality.', 'Bold and expressive: Strong graphics and typography capture the rebellious spirit of streetwear.', 'Meaningful and motivational: The mascot and brand message communicate a mindset of discipline and determination.', 'Distinctive and memorable: The signature skull mascot and pink accent create a recognizable visual identity.', 'Consistent and versatile: The branding works across chest prints, oversized back graphics, and promotional brand materials.', 'With this visual direction, MKE Design establishes more than just a clothing label. It represents a lifestyle and mindset built around one message: Motivation Kill Excuses.'],
+    externalLink: ''
+  },
+  {
     id: 'ai-job-scraper',
     title: 'AI Job Scraper + Resume Optimizer',
     category: 'Automation Solutions · N8N',
@@ -983,6 +1003,8 @@ if (projectDetailDialog) {
   const detailCategory = projectDetailDialog.querySelector('[data-project-detail-category]');
   const detailMainMedia = projectDetailDialog.querySelector('[data-project-detail-main-media]');
   const detailMainImage = projectDetailDialog.querySelector('[data-project-detail-main-image]');
+  const detailPreviousImage = projectDetailDialog.querySelector('[data-project-image-previous]');
+  const detailNextImage = projectDetailDialog.querySelector('[data-project-image-next]');
   const detailThumbnails = projectDetailDialog.querySelector('[data-project-detail-thumbnails]');
   const detailVideo = projectDetailDialog.querySelector('[data-project-detail-video]');
   const detailFields = projectDetailDialog.querySelector('[data-project-detail-fields]');
@@ -1016,6 +1038,7 @@ if (projectDetailDialog) {
   const hideProjectCursor = () => projectHoverCursor.classList.remove('is-visible');
   let activeDetailCard = null;
   let activeDetailProject = null;
+  let activeDetailImageIndex = 0;
   let activeDetailToken = '';
   let detailIsClosing = false;
 
@@ -1031,10 +1054,23 @@ if (projectDetailDialog) {
     detailBackButton?.classList.toggle('is-automation', /automation solutions/i.test(project.category || ''));
 
     const images = Array.isArray(project.images) ? project.images : [];
+    activeDetailImageIndex = 0;
     detailMainImage.hidden = images.length === 0;
     detailMainMedia.hidden = images.length === 0;
-    detailMainImage.src = images[0]?.src || '';
-    detailMainImage.alt = images[0]?.alt || project.title;
+    const showProjectImage = (index) => {
+      if (!images.length) return;
+      activeDetailImageIndex = (index + images.length) % images.length;
+      const image = images[activeDetailImageIndex];
+      detailMainImage.src = image.src;
+      detailMainImage.alt = image.alt || project.title;
+      detailThumbnails.querySelectorAll('.project-detail-thumbnail').forEach((button, buttonIndex) => {
+        button.setAttribute('aria-pressed', String(buttonIndex === activeDetailImageIndex));
+      });
+    };
+    detailPreviousImage.hidden = images.length < 2;
+    detailNextImage.hidden = images.length < 2;
+    detailPreviousImage.onclick = () => showProjectImage(activeDetailImageIndex - 1);
+    detailNextImage.onclick = () => showProjectImage(activeDetailImageIndex + 1);
     detailThumbnails.replaceChildren();
     detailThumbnails.hidden = images.length < 2;
     if (images.length > 1) {
@@ -1049,15 +1085,12 @@ if (projectDetailDialog) {
         thumbnailImage.alt = '';
         thumbnail.append(thumbnailImage);
         thumbnail.addEventListener('click', () => {
-          detailMainImage.src = image.src;
-          detailMainImage.alt = image.alt || project.title;
-          detailThumbnails.querySelectorAll('.project-detail-thumbnail').forEach((button) => {
-            button.setAttribute('aria-pressed', String(button === thumbnail));
-          });
+          showProjectImage(index);
         });
         detailThumbnails.append(thumbnail);
       });
     }
+    showProjectImage(0);
 
     detailVideo.replaceChildren();
     detailVideo.hidden = !project.video?.src;
@@ -1127,6 +1160,20 @@ if (projectDetailDialog) {
     detailExternal.hidden = !project.externalLink;
     if (project.externalLink) detailExternal.href = project.externalLink;
   };
+
+  projectDetailDialog.addEventListener('keydown', (event) => {
+    if (!projectDetailDialog.open || !activeDetailProject) return;
+    if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+    if (event.target.matches('input, textarea, select, [contenteditable="true"]')) return;
+    event.preventDefault();
+    const direction = event.key === 'ArrowRight' ? 1 : -1;
+    const count = activeDetailProject.images?.length || 0;
+    if (count > 1) {
+      activeDetailImageIndex = (activeDetailImageIndex + direction + count) % count;
+      const thumbnail = detailThumbnails.querySelectorAll('.project-detail-thumbnail')[activeDetailImageIndex];
+      thumbnail?.click();
+    }
+  });
 
   const openProjectDetail = (projectId, fromHistory = false) => {
     if (projectDetailDialog.open || detailIsClosing) return;
