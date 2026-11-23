@@ -827,8 +827,11 @@ const projectDetailData = [
     title: 'Wterly Eau de Parfum – Branding & Packaging Design',
     category: 'Graphic Design · Branding & Packaging',
     images: [
-      { src: 'assets/wterly/wterly%201.png', alt: 'Wterly Eau de Parfum black and gold perfume packaging' },
-      { src: 'assets/wterly/wterly%202.png', alt: 'Wterly Eau de Parfum bottle and packaging presentation' }
+      { src: 'assets/wterly/WTERLY%20%201.png', alt: 'Wterly Eau de Parfum black and gold perfume packaging' },
+      { src: 'assets/wterly/WTERLY%202.png', alt: 'Wterly Eau de Parfum bottle and packaging presentation' },
+      { src: 'assets/wterly/wterly%203%20(2).png', alt: 'Wterly Eau de Parfum brand presentation' },
+      { src: 'assets/wterly/WTERLY%204.png', alt: 'Wterly Eau de Parfum packaging design detail' },
+      { src: 'assets/wterly/WTERLY%205.png', alt: 'Wterly Eau de Parfum visual identity presentation' }
     ],
     video: null,
     client: '', duration: '',
