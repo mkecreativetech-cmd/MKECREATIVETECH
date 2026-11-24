@@ -1488,6 +1488,10 @@ html,body{overflow-x:clip}
   main>.about-section>.about-portrait>.portrait-actions{transform:translateX(-120px)}
 }
 
+@media (min-width:1301px) and (max-width:1400px) and (min-height:701px) and (max-height:800px){
+  main>.about-section>.about-portrait>.portrait-actions{transform:translateX(-280px)}
+}
+
 /* Center the portrait buttons over Mark on wide monitors. */
 @media (min-width:1401px){
   main>.about-section>.about-portrait>.portrait-actions{transform:translateX(25px)}
