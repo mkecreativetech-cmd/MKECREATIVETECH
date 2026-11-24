@@ -769,7 +769,15 @@ if (projectSelection && projectGallery && projectShowcases && projectGroups.leng
         projectSelection.hidden = true;
         projectGallery.hidden = false;
         projectGallery.classList.remove('is-leaving');
-        requestAnimationFrame(() => projectGallery.classList.add('is-visible'));
+        requestAnimationFrame(() => {
+          projectGallery.classList.add('is-visible');
+          const galleryTop = projectGallery.getBoundingClientRect().top + window.scrollY;
+          const galleryRise = Number.parseFloat(getComputedStyle(projectGallery).getPropertyValue('--project-gallery-rise')) || 0;
+          window.scrollTo({
+            top: Math.max(0, galleryTop - galleryRise - 16),
+            behavior: reduceMotion ? 'auto' : 'smooth'
+          });
+        });
         projectBackButton?.focus({ preventScroll: true });
       }, openDelay);
     });
