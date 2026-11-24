@@ -1493,6 +1493,10 @@ html,body{overflow-x:clip}
   main>.about-section>.about-portrait>.portrait-actions{transform:translateX(25px)}
 }
 
+@media (min-width:1401px) and (max-height:800px){
+  main>.about-section>.about-portrait>.portrait-actions{transform:translateX(-200px)}
+}
+
 /* Keep all five Services cards on one row beside the intro on desktop. */
 @media (min-width:1001px){
   .services-certificates-section .services-layout{
