@@ -1485,7 +1485,7 @@ html,body{overflow-x:clip}
 }
 
 @media (width:1280px) and (height:800px){
-  main>.about-section>.about-portrait>.portrait-actions{transform:translateX(63px)}
+  main>.about-section>.about-portrait>.portrait-actions{transform:translateX(13px)}
 }
 
 @media (min-width:1301px) and (max-width:1400px) and (max-height:850px){
