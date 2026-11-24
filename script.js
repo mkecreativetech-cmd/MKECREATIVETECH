@@ -771,10 +771,10 @@ if (projectSelection && projectGallery && projectShowcases && projectGroups.leng
         projectGallery.classList.remove('is-leaving');
         requestAnimationFrame(() => {
           projectGallery.classList.add('is-visible');
-          const galleryTop = projectGallery.getBoundingClientRect().top + window.scrollY;
-          const galleryRise = Number.parseFloat(getComputedStyle(projectGallery).getPropertyValue('--project-gallery-rise')) || 0;
+          const titleTop = projectGalleryCurrent?.getBoundingClientRect().top;
+          if (!Number.isFinite(titleTop)) return;
           window.scrollTo({
-            top: Math.max(0, galleryTop - galleryRise - 16),
+            top: Math.max(0, window.scrollY + titleTop - 18),
             behavior: reduceMotion ? 'auto' : 'smooth'
           });
         });
