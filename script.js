@@ -765,6 +765,7 @@ if (projectSelection && projectGallery && projectShowcases && projectGroups.leng
         });
         projectShowcases.dataset.active = activeProjectFolder;
         projectGalleryCurrent.textContent = folderNames[activeProjectFolder] || 'Projects';
+        projectGalleryCurrent.className = `project-gallery-current project-gallery-current--${activeProjectFolder}`;
         projectSelection.hidden = true;
         projectGallery.hidden = false;
         projectGallery.classList.remove('is-leaving');
