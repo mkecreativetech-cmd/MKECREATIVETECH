@@ -1482,7 +1482,7 @@ html,body{overflow-x:clip}
 
 /* Center the portrait buttons over Mark on wide monitors. */
 @media (min-width:1401px){
-  main>.about-section>.about-portrait>.portrait-actions{transform:translateX(55px)}
+  main>.about-section>.about-portrait>.portrait-actions{transform:translateX(25px)}
 }
 
 /* Keep all five Services cards on one row beside the intro on desktop. */
