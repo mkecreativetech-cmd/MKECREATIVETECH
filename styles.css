@@ -1638,7 +1638,7 @@ main>.projects-section:has(.project-gallery-screen.is-visible, .project-gallery-
 @media(max-width:1199px){.services-certificates-section .services-layout.container{display:block!important}.services-certificates-section .services-intro{margin:0 auto 22px;text-align:center}.services-certificates-section .services-intro .section-kicker,.services-certificates-section .services-intro h2,.services-certificates-section .services-intro>p:last-child{text-align:center}}
 @media(min-width:1200px){
   .services-certificates-section .service-grid{gap:clamp(18px,1.6vw,28px)!important}
-  .services-certificates-section .service-card{padding:11px!important;border-radius:18px!important}
+  .services-certificates-section .service-card{padding:11px 4px 11px 11px!important;border-radius:18px!important}
   .services-certificates-section .service-card-top{grid-template-columns:minmax(58px,.66fr) minmax(0,1.34fr);gap:9px;min-height:100px;padding-bottom:8px}
   .services-certificates-section .service-card-icon{padding-right:7px;border-right-width:2px}
   .services-certificates-section .service-card-heading h3{font-size:clamp(15px,1.25vw,19px);margin-bottom:4px}
