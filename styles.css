@@ -1256,7 +1256,7 @@ html,body{overflow-x:clip}
 }
 
 @media (min-width:701px) and (max-width:850px){
-  .hero-signature{left:60%;right:auto;top:78%;width:30vw}
+  .hero-signature{left:8%;right:auto;top:78%;width:30vw}
   .scroll-brand{top:8px;right:72px;width:46px;height:46px}
 }
 
