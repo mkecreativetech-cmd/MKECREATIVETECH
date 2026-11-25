@@ -1687,6 +1687,7 @@ main>.projects-section:has(.project-gallery-screen.is-visible, .project-gallery-
 /* Match the tablet composition on iPad Pro widths as well as iPad mini. */
 @media (min-width:1001px) and (max-width:1100px){
   main>.hero{height:auto;min-height:100svh}
+  main>.hero:after{background-position:72% 42%}
   .hero-inner{height:auto;min-height:100svh;align-items:stretch;padding:clamp(70px,10vh,96px) 0 clamp(36px,5vh,54px)}
   .hero-copy{align-self:stretch;display:flex;flex-direction:column;justify-content:center;width:60%;max-width:760px;padding:0 0 132px;transform:translateY(-80px)}
   .hero h1{font-size:clamp(70px,8.8vw,88px);line-height:.86}
