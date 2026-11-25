@@ -1637,6 +1637,7 @@ main>.projects-section:has(.project-gallery-screen.is-visible, .project-gallery-
 }
 @media(max-width:1199px){.services-certificates-section .services-layout.container{display:block!important}.services-certificates-section .services-intro{margin:0 auto 22px;text-align:center}.services-certificates-section .services-intro .section-kicker,.services-certificates-section .services-intro h2,.services-certificates-section .services-intro>p:last-child{text-align:center}}
 @media(min-width:1200px){
+  .services-certificates-section .service-grid{gap:clamp(18px,1.6vw,28px)!important}
   .services-certificates-section .service-card{padding:11px!important;border-radius:18px!important}
   .services-certificates-section .service-card-top{grid-template-columns:minmax(58px,.66fr) minmax(0,1.34fr);gap:9px;min-height:100px;padding-bottom:8px}
   .services-certificates-section .service-card-icon{padding-right:7px;border-right-width:2px}
@@ -1647,6 +1648,6 @@ main>.projects-section:has(.project-gallery-screen.is-visible, .project-gallery-
   .services-certificates-section .service-card li::before{width:21px;height:21px;border-radius:6px;font-size:14px}
 }
 .services-certificates-section .service-card ul{position:relative;left:-9px;width:fit-content;max-width:calc(100% - 14px);margin-left:auto!important;margin-right:auto!important}
-@media(min-width:1200px){.services-certificates-section .service-card li{font-size:clamp(10px,.78vw,12px);padding-left:26px}.services-certificates-section .service-card li::before{width:19px;height:19px;font-size:13px}.services-certificates-section .service-card-heading h3{font-size:clamp(16px,1.4vw,21px)}.services-certificates-section .service-card-heading p{font-size:clamp(11px,.85vw,13px)}}
+@media(min-width:1200px){.services-certificates-section .service-card li{font-size:clamp(10px,.78vw,12px);padding-left:26px}.services-certificates-section .service-card li::before{width:19px;height:19px;font-size:13px}.services-certificates-section .service-card-heading h3{font-size:clamp(18px,1.65vw,24px)}.services-certificates-section .service-card-heading p{font-size:clamp(11px,.85vw,13px)}}
 
 
